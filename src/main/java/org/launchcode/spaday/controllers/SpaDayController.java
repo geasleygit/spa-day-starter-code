@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class SpaDayController {
     public boolean checkSkinType(String skinType, String facialType) {
         if (skinType.equals("oily")) {
-            if (facialType.equals("Microdermabrasion") || facialType.equals("Rejuvenating")) {
+            if (facialType.equals("Warm Washcloth") || facialType.equals("Lotion")) {
                 return true;
             }
             else {
@@ -16,7 +16,7 @@ public class SpaDayController {
             }
         }
         else if (skinType.equals("combination")) {
-            if (facialType.equals("Microdermabrasion") || facialType.equals("Rejuvenating") || facialType.equals("Enzyme Peel")) {
+            if (facialType.equals("Warm Washcloth") || facialType.equals("Lotion") || facialType.equals("Fruit Smash")) {
                 return true;
             }
             else {
@@ -27,7 +27,7 @@ public class SpaDayController {
             return true;
         }
         else if (skinType.equals("dry")) {
-            if (facialType.equals("Rejuvenating") || facialType.equals("Hydrofacial")) {
+            if (facialType.equals("Warm Washcloth") || facialType.equals("Cup Of Water")) {
                 return true;
             }
             else {
@@ -64,10 +64,10 @@ public class SpaDayController {
     public String spaMenu(@RequestParam String name, @RequestParam String skintype, @RequestParam String manipedi, Model model) {
         String cap = skintype.substring(0, 1).toUpperCase() + skintype.substring(1);
         ArrayList<String> facials = new ArrayList<String>();
-        facials.add("Microdermabrasion");
-        facials.add("Hydrofacial");
-        facials.add("Rejuvenating");
-        facials.add("Enzyme Peel");
+        facials.add("Warm Washcloth");
+        facials.add("Cup Of Water");
+        facials.add("Lotion");
+        facials.add("Fruit Smash");
         ArrayList<String> appropriateFacials = new ArrayList<String>();
         for (int i = 0; i < facials.size(); i ++) {
             if (checkSkinType(skintype,facials.get(i))) {

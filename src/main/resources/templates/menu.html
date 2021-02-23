@@ -6,16 +6,16 @@
     <link href="../static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
 </head>
 <body>
-<h1>My Super Fancy Spa</h1>
+<h1>THIS IS SPArta.</h1>
 <div id = "clientProfile">
     <h2>My Profile</h2>
     <p th:text=${name} >Name</p>
-    <p th:text="${skintype}">Skin Type</p>
-    <p th:text="${manipedi}">Mani / Pedi</p>
+    <p th:text="${skintype}">Grease Level</p>
+    <p th:text="${manipedi}">Manli / Pedi</p>
 </div>
 <div id = "servicesMenu">
-    <h3>Facial Treatments</h3>
-    <p>The facial treatments below are recommended by our estheticians for your given skin type.</p>
+    <h3>Face Things</h3>
+    <p>Pick one.</p>
     <th:block th:each = "facial : ${appropriateFacials}">
         <p th:text = "${facial}"></p>
     </th:block>
